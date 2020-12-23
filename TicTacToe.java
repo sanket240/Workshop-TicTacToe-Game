@@ -17,6 +17,7 @@ public class TicTacToe
 		}
 		System.out.println("Computer Letter is:"+computer +"  "+"Player letter is:"+player);
 		printBoard(board);
+		desiredIndexMove(board);
 	}
 	private static char[] createBoard() //Creating a board method 
 	{
@@ -34,8 +35,8 @@ public class TicTacToe
 		 Scanner input=new Scanner(System.in);
 		 char player;
 		 System.out.println("Enter For player(X/0)");
-		 player=input.next().charAt(0);	
-		 return player;  	 	 
+		 player=input.next().charAt(0);
+		 return player;
 	}
 	public static void printBoard(char board[])//printing the board method
 	{
@@ -46,5 +47,20 @@ public class TicTacToe
 		 System.out.println("| " + board[7] + " | " + board[8] + " | " + board[9] + " |");
 		 System.out.println("|-----------|");
 	}
-	
+	public static void desiredIndexMove(char board[])//placing move to desired index
+	{
+		 int index;
+		 Scanner input=new Scanner(System.in);
+		 System.out.println("Enter Index number between[1 to 9] to check:");
+		 index=input.nextInt();
+			 if( index>0&&index<10&&board[index]==' ')
+			 {
+				 System.out.println(index+" Index is empty");
+			 }
+			 else
+			 {
+				 System.out.print("Re enter the valid index");
+			 }
+
+	}
 }
