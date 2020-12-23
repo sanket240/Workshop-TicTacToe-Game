@@ -6,6 +6,7 @@ public class TicTacToe
 	{
 		char[] board = createBoard();
 		char player,computer;
+		int toss;
 		player=LetterSelect();
 		if(player=='X') 
 		{
@@ -18,6 +19,7 @@ public class TicTacToe
 		System.out.println("Computer Letter is:"+computer +"  "+"Player letter is:"+player);
 		printBoard(board);
 		desiredIndexMove(board,player);
+		toss=coinToss();
 	}
 	private static char[] createBoard() //Creating a board method 
 	{
@@ -68,5 +70,11 @@ public class TicTacToe
 	{
 		 board[index]=playerMove;
 		 printBoard(board);		 
+	}
+	public static int coinToss()
+	{
+		 Random random=new Random();
+		 int coinFlip=random.nextInt(2)+1;
+		 return coinFlip; 
 	}
 }
